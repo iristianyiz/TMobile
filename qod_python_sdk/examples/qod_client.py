@@ -26,7 +26,7 @@ def basic_auth_token(client_id: str, client_secret: str) -> str:
     return f"Basic {token}"
 
 # ── Step 3: Add supporting functions for GUID generation
-# random_str() is used within create_guid(). citeturn1file1
+# random_str() is used within create_guid(). 
 def random_str(length: int = 4) -> str:
     return hex(floor((1 + random()) * 0x10000))[3:]
 
