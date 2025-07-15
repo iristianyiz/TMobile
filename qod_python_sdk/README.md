@@ -20,6 +20,7 @@ The Quality-On-Demand (QoD) API provides programmable interface for developers a
   - [Setting an Environment](#setting-an-environment)
 - [Setting a custom Timeout](#setting-a-custom-timeout)
 - [Sample Usage](#sample-usage)
+- [Testing](#testing)
 - [Services](#services)
 - [Models](#models)
 
@@ -91,6 +92,57 @@ result = sdk.session.get_session(
 print(result)
 
 ```
+
+## Testing
+
+The SDK includes a comprehensive test suite to ensure reliability and functionality. The tests are designed to run without requiring external API access, using mocking to simulate API responses.
+
+### Running Tests
+
+1. **Install test dependencies:**
+   ```bash
+   pip install -e ".[test]"
+   ```
+
+2. **Run all tests:**
+   ```bash
+   pytest
+   ```
+
+3. **Run tests with verbose output:**
+   ```bash
+   pytest -v
+   ```
+
+4. **Run tests with coverage:**
+   ```bash
+   pytest --cov=src/tmode_qod
+   ```
+
+5. **Skip slow tests:**
+   ```bash
+   pytest -m "not slow"
+   ```
+
+6. **Use the test runner script:**
+   ```bash
+   python run_tests.py
+   ```
+
+### Test Structure
+
+- `tests/` - Test directory containing all test files
+- `tests/conftest.py` - Common fixtures and configuration
+- `tests/test_qod_client.py` - Tests for QoD API client functionality
+- `tests/README.md` - Detailed testing documentation
+
+### Test Categories
+
+- **Unit Tests**: Test individual functions and methods
+- **Integration Tests**: Test component interactions
+- **Slow Tests**: Longer-running tests (marked with `@pytest.mark.slow`)
+
+For more detailed information about testing, see [tests/README.md](tests/README.md).
 
 ## Services
 
